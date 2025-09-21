@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', function() {
+
     const uploadZone = document.getElementById('uploadZone');
     const fileInput = document.getElementById('fileInput');
     const changeImage = document.getElementById('changeImage');
@@ -44,7 +46,7 @@
             [170,85,0], [170,170,170], [85,85,85], [85,85,255], [85,255,85], [85,255,255],
             [255,85,85], [255,85,255], [255,255,85], [255,255,255]
         ],
-        mono: [[0,0,0], [255,255,255]],'
+        mono: [[0,0,0], [255,255,255]],
         sepia: [
             [112,66,20], [140,85,31], [168,107,46], [196,129,61], [224,151,76],
             [252,173,91], [255,196,115], [255,218,139], [255,240,163], [255,255,187]
@@ -62,7 +64,7 @@
         mono: 'MONO',
         sepia: 'SEPIA'
     };
-
+    
     // ... (rest of your functions go here) ...
     
     function getImageBackgroundColor() {
@@ -320,3 +322,5 @@
         link.click();
         status.textContent = `Image Saved • ${paletteNames[selectedPalette]}`;
     });
+
+});
