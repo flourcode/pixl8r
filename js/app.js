@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const status = document.getElementById('status');
     const canvas = document.getElementById('canvas');
     const imageInfo = document.getElementById('imageInfo');
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
 
     let originalImage = null;
     let selectedPalette = 'gameboy';
