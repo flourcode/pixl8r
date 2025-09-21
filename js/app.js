@@ -1,5 +1,3 @@
-    document.addEventListener('DOMContentLoaded', function() {
-
     const uploadZone = document.getElementById('uploadZone');
     const fileInput = document.getElementById('fileInput');
     const changeImage = document.getElementById('changeImage');
@@ -322,5 +320,3 @@
         link.click();
         status.textContent = `Image Saved • ${paletteNames[selectedPalette]}`;
     });
-
-});
