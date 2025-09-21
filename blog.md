@@ -21,7 +21,17 @@ title: Blog
         </ul>
     </div>
 
-    <aside class="blog-sidebar">
-        </aside>
+   <aside class="blog-sidebar">
+    <h3>Recent Posts</h3>
+    <ul>
+      {% for post in site.posts limit:5 %}
+        <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
 
-</div>
+    <h3>Categories</h3>
+    <ul>
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">News</a></li>
+    </ul>
+</aside>
