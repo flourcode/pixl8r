@@ -316,11 +316,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     downloadBtn.addEventListener('click', function() {
-        const link = document.createElement('a');
-        link.download = 'pixel-art.png';
-        link.href = canvas.toDataURL('image/png');
-        link.click();
-        status.textContent = `Image Saved • ${paletteNames[selectedPalette]}`;
-    });
-
+    const imageUrl = canvas.toDataURL("image/png");
+    window.open(imageUrl);
+    status.textContent = `Image opened in new tab • ${paletteNames[selectedPalette]}`;
+});
 });
