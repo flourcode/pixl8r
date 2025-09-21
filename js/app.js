@@ -320,13 +320,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check if the user is on an Apple mobile device
     if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-        // On iOS, open the image in a new tab for the "long-press to save" workflow
-        window.open(imageUrl);
+        
+        // ✨ Step 1: Open a blank tab and get a reference to it.
+        const newTab = window.open();
+        
+        // ✨ Step 2: Write an <img> tag into the new tab's document.
+        // This displays the image and makes it fit the screen nicely.
+        newTab.document.write(`<img src="${imageUrl}" style="width:100%;" alt="Generated PIXL8R art">`);
+
         status.textContent = `Image opened in new tab • ${paletteNames[selectedPalette]}`;
+
     } else {
-        // For all other devices (Desktop, Android), trigger a direct file download
+        // For all other devices (Desktop, Android), the direct download method still works best.
         const link = document.createElement('a');
-        link.download = 'pixl8r-art.png'; // Set a filename
+        link.download = 'pixl8r-art.png';
         link.href = imageUrl;
         link.click();
         status.textContent = `Image Saved • ${paletteNames[selectedPalette]}`;
