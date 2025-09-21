@@ -317,7 +317,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     downloadBtn.addEventListener('click', function() {
     const imageUrl = canvas.toDataURL("image/png");
-    window.open(imageUrl);
-    status.textContent = `Image opened in new tab • ${paletteNames[selectedPalette]}`;
+
+    // Check if the user is on an Apple mobile device
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        // On iOS, open the image in a new tab for the "long-press to save" workflow
+        window.open(imageUrl);
+        status.textContent = `Image opened in new tab • ${paletteNames[selectedPalette]}`;
+    } else {
+        // For all other devices (Desktop, Android), trigger a direct file download
+        const link = document.createElement('a');
+        link.download = 'pixl8r-art.png'; // Set a filename
+        link.href = imageUrl;
+        link.click();
+        status.textContent = `Image Saved • ${paletteNames[selectedPalette]}`;
+    }
 });
 });
