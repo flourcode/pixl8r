@@ -1,5 +1,4 @@
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
 
     const uploadZone = document.getElementById('uploadZone');
     const fileInput = document.getElementById('fileInput');
@@ -325,4 +324,3 @@
     });
 
 });
-    </script>
