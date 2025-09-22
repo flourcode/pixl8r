@@ -95,7 +95,6 @@ permalink: /about/
 .page-hero {
     padding: 60px 0;
     text-align: center;
-    background: linear-gradient(135deg, #ffcd75 0%, #f2f0e8 100%);
 }
 
 .page-hero h1 {
