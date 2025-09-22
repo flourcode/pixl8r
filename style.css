@@ -618,7 +618,8 @@
 }
 @media (max-width: 768px) {
     .main-content {
-        padding: 5px; /* Side padding for mobile */
+        padding: 7px; /* Side padding for mobile */
     }
 }
+
 
